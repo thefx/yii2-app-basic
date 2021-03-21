@@ -37,7 +37,6 @@ return [
         ],
         'setExecutable' => [
             'yii',
-            'yii_test',
         ],
         'setCookieValidationKey' => [
             'config/web-local.php',
