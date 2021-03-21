@@ -1,4 +1,4 @@
-[![build](https://github.com/thefx/yii2-app-basic/workflows/build/badge.svg)](https://github.com/yiisoft/yii2-app-basic/actions?query=workflow%3Abuild)
+[![build](https://github.com/thefx/yii2-app-basic/workflows/build/badge.svg)](https://github.com/thefx/yii2-app-basic/actions?query=workflow%3Abuild)
 
 REQUIREMENTS
 ------------
