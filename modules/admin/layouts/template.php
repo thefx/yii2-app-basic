@@ -18,11 +18,11 @@ use yii\helpers\Html; ?>
 
     <?php $this->head() ?>
 </head>
-<body class="hold-transition sidebar-mini layout-fixed text-sm-">
+<body class="hold-transition text-sm-">
 <!-- Site wrapper -->
 <div class="wrapper">
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-dark navbar-lightblue">
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
         <!-- Left navbar links -->
         <ul class="navbar-nav">
             <li class="nav-item">

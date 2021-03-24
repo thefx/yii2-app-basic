@@ -33,7 +33,7 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-header">Прочее</li>
+                <li class="nav-header">ПРОЧЕЕ</li>
                 <li class="nav-item">
                     <a href="../widgets.html" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
@@ -43,7 +43,7 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-header">Пользователь</li>
+                <li class="nav-header">ПОЛЬЗОВАТЕЛЬ</li>
                 <li class="nav-item">
                     <a href="<?= \yii\helpers\Url::to(['/user/default/logout']) ?>" class="nav-link" data-method="post">
                         <i class="nav-icon fas fa-power-off"></i>
