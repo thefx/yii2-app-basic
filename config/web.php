@@ -12,10 +12,11 @@ $urlManager = require __DIR__ . '/url_manager.php';
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => ['log', \thefx\user\Bootstrap::class],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
+        '@thefx/user' => '@app/extensions/user',
     ],
     'modules' => [
 //        'blocks' => [
@@ -25,6 +26,11 @@ $config = [
 //            'layoutPure' => 'pure',
 //            'rootUsers' => [1],
 //        ],
+        'user' => [
+            'class' => 'thefx\user\Module',
+//            'register' => true,
+//            'layout' => '@app/views/layouts/window.php'
+        ],
         'admin' => [
             'class' => 'app\modules\admin\Admin',
         ],
