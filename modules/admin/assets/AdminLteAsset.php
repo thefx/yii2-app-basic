@@ -21,6 +21,7 @@ class AdminLteAsset extends AssetBundle
         'plugins/overlayScrollbars/css/OverlayScrollbars.min.css',
 //        'plugins/daterangepicker/daterangepicker.css',
 //        '//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700',
+        'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback'
     ];
 
     public $js = [
@@ -35,19 +36,19 @@ class AdminLteAsset extends AssetBundle
         'yii\web\JqueryAsset', // yii.js, jquery.js
     ];
 
-    public function init()
-    {
-        parent::init();
-        \Yii::$app->assetManager->bundles['yii\\web\\JqueryAsset'] = [
-            'jsOptions' => [
-                'position' =>  View::POS_HEAD,
-            ],
-        ];
-//        \Yii::$app->assetManager->bundles['yii\\bootstrap\\BootstrapAsset'] = [
-//            'css' => []
-//        ];
-//        \Yii::$app->assetManager->bundles['yii\\bootstrap\\BootstrapThemeAsset'] = [
-//            'css' => []
-//        ];
-    }
+//    public function init()
+//    {
+//        parent::init();
+////        \Yii::$app->assetManager->bundles['yii\\web\\JqueryAsset'] = [
+////            'jsOptions' => [
+////                'position' =>  View::POS_HEAD,
+////            ],
+////        ];
+////        \Yii::$app->assetManager->bundles['yii\\bootstrap\\BootstrapAsset'] = [
+////            'css' => []
+////        ];
+////        \Yii::$app->assetManager->bundles['yii\\bootstrap\\BootstrapThemeAsset'] = [
+////            'css' => []
+////        ];
+//    }
 }

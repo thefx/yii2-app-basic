@@ -9,47 +9,44 @@ use yii\widgets\Breadcrumbs;
 
 $this->beginContent(__DIR__ . '/template.php'); ?>
 
-<?= $this->render('left') ?>
+    <?= $this->render('left') ?>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
-        <section class="content-header">
+        <div class="content-header">
             <div class="container-fluid">
-
-                <?= Breadcrumbs::widget([
-                    'links' => $this->params['breadcrumbs'] ?? [],
-                    'options' => ['class' => 'breadcrumb breadcrumb-caret'],
-                    'itemTemplate' => "<li class=\"breadcrumb-item\">{link}</li>\n",
-                    'activeItemTemplate' => "<li class=\"breadcrumb-item active\">{link}</li>\n",
-                ]) ?>
-
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1><?= Html::encode($this->title) ?></h1>
-                    </div>
-                    <div class="col-sm-6 text-right">
-                        <?= $this->params['title_btn'] ?? null ?>
-                    </div>
-                </div>
+                        <h1 class="m-0"><?= Html::encode($this->title) ?></h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
 
+                        <?= Breadcrumbs::widget([
+                            'tag' => 'ol',
+                            'homeLink' => ['label'=> 'Главная', 'url' => '/admin/'],
+                            'links' => $this->params['breadcrumbs'] ?? [],
+                            'options' => ['class' => 'breadcrumb float-sm-right'],
+                            'itemTemplate' => "<li class=\"breadcrumb-item\">{link}</li>\n",
+                            'activeItemTemplate' => "<li class=\"breadcrumb-item active\">{link}</li>\n",
+                        ]) ?>
+
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
             </div><!-- /.container-fluid -->
-        </section>
+        </div>
+        <!-- /.content-header -->
 
         <!-- Main content -->
-        <section class="content">
-
-            <?= Alert::widget() ?>
-
+        <div class="content">
             <div class="container-fluid">
-                <div class="card card-outline card-primary">
-                    <div class="card-body">
-                        <?= $content ?>
-                    </div>
-                </div>
-            </div>
 
-        </section>
+                <?= Alert::widget() ?>
+
+                <?= $content ?>
+
+            </div><!-- /.container-fluid -->
+        </div>
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
