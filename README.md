@@ -20,12 +20,42 @@ You can then install this project template using the following command:
 composer create-project --prefer-dist thefx/yii2-app-basic .
 ~~~
 
-Now you should be able to access the application through the following URL, assuming `basic` is the directory
-directly under the Web root.
+Now you should be able to access the application through the following URL.
 
 ~~~
-http://localhost/basic/web/
+http://localhost/web/
 ~~~
+
+## Preparing application
+
+After you install the application, you have to conduct the following steps to initialize
+the installed application. You only need to do these once for all.
+
+1. Open a console terminal, execute the `init` command and select `dev` as environment.
+
+   ```
+   /path/to/php-bin/php /path/to/yii-application/init
+   ```
+
+   If you automate it with a script you can execute `init` in non-interactive mode.
+
+   ```
+   /path/to/php-bin/php /path/to/yii-application/init --env=Development --overwrite=All --delete=All
+   ```
+
+2. Edit the file `config/db-local.php` with real data, for example:
+
+    ```php
+    return [
+        'class' => 'yii\db\Connection',
+        'dsn' => 'mysql:host=localhost;dbname=yii2basic',
+        'username' => 'root',
+        'password' => '1234',
+        'charset' => 'utf8',
+    ];
+    ```
+
+3. Open a console terminal, apply migrations with command `/path/to/php-bin/php /path/to/yii-application/yii migrate`.
 
 ### Install with Docker
 
