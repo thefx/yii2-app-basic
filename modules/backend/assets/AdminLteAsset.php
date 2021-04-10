@@ -1,9 +1,8 @@
 <?php
 
-namespace app\modules\admin\assets;
+namespace app\modules\backend\assets;
 
 use yii\web\AssetBundle;
-use yii\web\View;
 
 /**
  * Main frontend application asset bundle.
@@ -21,7 +20,7 @@ class AdminLteAsset extends AssetBundle
         'plugins/overlayScrollbars/css/OverlayScrollbars.min.css',
 //        'plugins/daterangepicker/daterangepicker.css',
 //        '//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700',
-        'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback'
+        'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback',
     ];
 
     public $js = [
@@ -33,6 +32,8 @@ class AdminLteAsset extends AssetBundle
     ];
 
     public $depends = [
+        'yii\bootstrap4\BootstrapPluginAsset',
+        'yii\bootstrap4\BootstrapAsset',
         'yii\web\JqueryAsset', // yii.js, jquery.js
     ];
 

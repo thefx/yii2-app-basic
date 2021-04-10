@@ -7,7 +7,22 @@ return [
     'showScriptName' => false,
 //    'cache' => false,
 //    'enableStrictParsing' => true,
-//    'rules' => [
+    'rules' => [
+        '/' => 'frontend/default/index',
+
+        '<slug:(?!admin|pages|blocks)[\w-\/]+>' => 'frontend/pages/view', // pages
+
+//        '<_c:catalog>/<slug:[\w\-_]+>' => 'frontend/<_c>/view',
+//        '<_c:product>/<slug:[\w\-_]+>' => 'frontend/<_c>/view',
+
+//        '<_m:(blocks|pages)>/' => '<_m>/default/index',
+//        '<_m:(blocks|pages)>/<_c:[\w\-]+>' => '<_m>/<_c>/index',
+//        '<_m:(blocks|pages)>/<_c:[\w\-]+>/<id:\d+>' => '<_m>/<_c>/view',
+//        '<_m:(blocks|pages)>/<_c:[\w\-]+>/<_a:[\w-]+>' => '<_m>/<_c>/<_a>',
+//
+//        '<_c>/' => 'frontend/<_c>/index',
+//        '<_c>/<slug:[\w\-_]+>' => 'frontend/<_c>/view-by-slug',
+
 //        '/' => 'front/default/index',
 //        'search/<search:[\w\-\/]+>?' => 'front/search/index',
 //        'support/dajest' => 'front/dajest/index',
@@ -50,5 +65,5 @@ return [
 //        'site/i' => 'site/i',
 //
 //        '<path:[\w\-\/]+>' => 'front/page/view',
-//    ],
+    ],
 ];

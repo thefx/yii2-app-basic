@@ -1,19 +1,19 @@
 <?php
 
-namespace app\modules\admin;
+namespace app\modules\backend;
 use yii\base\Module;
 use yii\filters\AccessControl;
 use yii\web\View;
 
-class Admin extends Module
+class Backend extends Module
 {
-    public $controllerNamespace = 'app\modules\admin\controllers';
+    public $controllerNamespace = 'app\modules\backend\controllers';
     public $layout = 'main';
 
     public function init()
     {
         parent::init();
-        $this->setLayoutPath('@app/modules/admin/layouts');
+        $this->setLayoutPath('@app/modules/backend/layouts');
 
         \Yii::$app->assetManager->appendTimestamp = true;
         \Yii::$app->assetManager->bundles = [

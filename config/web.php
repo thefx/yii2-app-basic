@@ -8,34 +8,48 @@ $db = array_merge(
     require __DIR__ . '/db-local.php'
 );
 $urlManager = require __DIR__ . '/url_manager.php';
+$container = require __DIR__ . '/container.php';
 
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log', \thefx\user\Bootstrap::class],
+    'bootstrap' => ['log'],
+//    'language' => 'ru-RU',
+//    'timeZone' => 'Europe/Moscow',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
         '@thefx/user' => '@app/extensions/user',
     ],
     'modules' => [
-//        'blocks' => [
-//            'class' => 'thefx\blocks\Module',
-//            'layoutPath' => '@app/modules/admin/layouts',
-//            'layout' => 'page',
-//            'layoutPure' => 'pure',
-//            'rootUsers' => [1],
-//        ],
+        'admin' => [
+            'class' => 'app\modules\backend\Backend',
+        ],
+        'frontend' => [
+            'class' => 'app\modules\frontend\Frontend',
+        ],
+        'blocks' => [
+            'class' => 'thefx\blocks\Module',
+            'layoutPath' => '@app/modules/backend/layouts',
+            'layout' => 'main',
+            'layoutPure' => 'pure',
+            'rootUsers' => [1],
+        ],
+        'pages' => [
+            'class' => 'thefx\pages\Module',
+            'layout' => 'main',
+            'layoutPure' => 'pure',
+            'layoutPath' => '@app/modules/backend/layouts',
+        ],
         'user' => [
             'class' => 'thefx\user\Module',
-//            'register' => true,
-//            'layout' => '@app/views/layouts/window.php'
-        ],
-        'admin' => [
-            'class' => 'app\modules\admin\Admin',
         ],
     ],
     'components' => [
+        'assetManager' => [
+            'appendTimestamp' => true,
+            'linkAssets' => true,
+        ],
         'request' => [
             'cookieValidationKey' => '',
         ],
@@ -43,12 +57,13 @@ $config = [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
+            'identityClass' => 'thefx\user\models\User',
             'enableAutoLogin' => true,
-            'identityCookie' => ['name' => '_identity', 'httpOnly' => true],
+            'loginUrl' => ['/login'],
+//            'identityCookie' => ['name' => '_identity', 'httpOnly' => true],
         ],
         'errorHandler' => [
-            'errorAction' => 'site/error',
+            'errorAction' => 'frontend/site/error',
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
@@ -66,7 +81,18 @@ $config = [
         'db' => $db,
         'urlManager' => $urlManager,
     ],
+    'as access pages' => [
+        'class' => 'yii\filters\AccessControl',
+        'only' => ['pages/*', 'blocks/*'],
+        'rules' => [
+            [
+                'allow' => true,
+                'roles' => ['@'],
+            ],
+        ],
+    ],
     'params' => $params,
+    'container' => $container,
 ];
 
 return $config;

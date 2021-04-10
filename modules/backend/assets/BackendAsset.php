@@ -1,9 +1,8 @@
 <?php
 
-namespace app\modules\admin\assets;
+namespace app\modules\backend\assets;
 
 use yii\web\AssetBundle;
-use yii\web\View;
 
 /**
  * Main frontend application asset bundle.
@@ -12,7 +11,11 @@ class BackendAsset extends AssetBundle
 {
     public $sourcePath = __DIR__ . '/assets';
 
+    public $css = [
+        'css/theme.css'
+    ];
+
     public $depends = [
-        'app\modules\admin\assets\AdminLteAsset',
+        'app\modules\backend\assets\AdminLteAsset',
     ];
 }

@@ -2,6 +2,7 @@
 /* @var $this View */
 /* @var $content string */
 
+use app\modules\backend\widgets\leftBar\LeftBarWidget;
 use app\widgets\Alert;
 use yii\helpers\Html;
 use yii\web\View;
@@ -9,7 +10,8 @@ use yii\widgets\Breadcrumbs;
 
 $this->beginContent(__DIR__ . '/template.php'); ?>
 
-    <?= $this->render('left') ?>
+    <!--    --><?//= $this->render('left') ?>
+<?= LeftBarWidget::widget() ?>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -43,7 +45,15 @@ $this->beginContent(__DIR__ . '/template.php'); ?>
 
                 <?= Alert::widget() ?>
 
-                <?= $content ?>
+                <div class="card card-gray card-outline">
+                    <div class="card-body">
+
+                        <div>
+                            <?= $content ?>
+                        </div>
+
+                    </div>
+                </div>
 
             </div><!-- /.container-fluid -->
         </div>

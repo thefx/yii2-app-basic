@@ -1,6 +1,6 @@
 <?php
 
-namespace app\modules\admin\widgets\leftBar;
+namespace app\modules\backend\widgets\leftBar;
 
 use thefx\blocks\models\blocks\Block;
 use yii\bootstrap\Widget;
