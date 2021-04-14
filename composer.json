@@ -45,6 +45,12 @@
             "enabled": false
         }
     },
+    "scripts": {
+        "post-install-cmd": "php init --env=Development --overwrite=n",
+        "post-create-project-cmd": [
+            "yii\\composer\\Installer::postCreateProject"
+        ]
+    },
     "repositories": [
         {
             "type": "composer",
