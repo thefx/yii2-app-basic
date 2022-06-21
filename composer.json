@@ -45,9 +45,6 @@
             "enabled": false
         }
     },
-    "scripts": {
-        "post-install-cmd": "php init --env=Development --overwrite=n"
-    },
     "repositories": [
         {
             "type": "composer",

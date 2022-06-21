@@ -34,7 +34,7 @@ class AdminLteAsset extends AssetBundle
     public $depends = [
         'yii\bootstrap4\BootstrapPluginAsset',
         'yii\bootstrap4\BootstrapAsset',
-        'yii\web\JqueryAsset', // yii.js, jquery.js
+        'yii\web\YiiAsset', // yii.js, jquery.js
     ];
 
 //    public function init()
