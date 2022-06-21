@@ -60,11 +60,12 @@ php yii migrate --migrationPath=@thefx/pages/migrations
 php yii migrate --migrationPath=@thefx/blocks/migrations
 ```
 
-Now you should be able to access the application through the following URL.
+You can then access the application through the following URL:
 
 ~~~
 http://localhost/web/
 ~~~
+
 
 ### Install with Docker
 
@@ -111,7 +112,7 @@ vendor/bin/codecept run
 
 The command above will execute unit and functional tests. Unit tests are testing the system components, while functional
 tests are for testing user interaction. Acceptance tests are disabled by default as they require additional setup since
-they perform testing in real browser.
+they perform testing in real browser. 
 
 
 ### Code coverage support

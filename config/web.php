@@ -51,6 +51,7 @@ $config = [
             'linkAssets' => true,
         ],
         'request' => [
+            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '',
         ],
         'cache' => [
@@ -66,7 +67,9 @@ $config = [
             'errorAction' => 'frontend/site/error',
         ],
         'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
+            'class' => \yii\symfonymailer\Mailer::class,
+            'viewPath' => '@app/mail',
+            // send all mails to a file by default.
             'useFileTransport' => true,
         ],
         'log' => [
